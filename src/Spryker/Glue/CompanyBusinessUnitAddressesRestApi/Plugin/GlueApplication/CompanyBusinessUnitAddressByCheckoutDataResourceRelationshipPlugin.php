@@ -15,12 +15,12 @@ use Spryker\Glue\Kernel\AbstractPlugin;
 /**
  * @method \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\CompanyBusinessUnitAddressesRestApiFactory getFactory()
  */
-class CompanyBusinessUnitAddressesByCompanyBusinessUnitResourceRelationshipPlugin extends AbstractPlugin implements ResourceRelationshipPluginInterface
+class CompanyBusinessUnitAddressByCheckoutDataResourceRelationshipPlugin extends AbstractPlugin implements ResourceRelationshipPluginInterface
 {
     /**
      * {@inheritDoc}
      * - Adds company business unit addresses resources as relationship.
-     * - Requires a `CompanyUnitAddressCollectionTransfer` to be provided in resource payload.
+     * - Requires a `RestCheckoutDataTransfer` to be provided in resource payload.
      *
      * @api
      *
@@ -32,7 +32,7 @@ class CompanyBusinessUnitAddressesByCompanyBusinessUnitResourceRelationshipPlugi
     public function addResourceRelationships(array $resources, RestRequestInterface $restRequest): void
     {
         $this->getFactory()
-            ->createCompanyBusinessUnitAddressCollectionByCompanyBusinessUnitTransferResourceRelationshipExpander()
+            ->createCompanyBusinessUnitAddressCollectionByCheckoutDataResourceRelationshipExpander()
             ->addResourceRelationships($resources, $restRequest);
     }
 
