@@ -19,7 +19,7 @@ class CompanyBusinessUnitAddressCheckoutRequestAttributesValidatorPlugin extends
 {
     /**
      * {@inheritDoc}
-     * - Requires `restCheckoutRequestAttributes.restUser.idCompany` to be set.
+     * - Expects `restCheckoutRequestAttributes.restUser.idCompany` to be provided.
      * - Collects shipping address uuids from `restCheckoutRequestAttributes.shipments`.
      * - Checks if company addresses exists.
      * - Returns CheckoutResponseTransfer with error if any check was failed.
