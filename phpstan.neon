@@ -1,2 +1,9 @@
 parameters:
     level: 7
+    ignoreErrors:
+        # Glue framework annotation parsing
+        -
+            identifier: phpDoc.parseError
+        # Defensive programming: instanceof check kept for runtime safety
+        -
+            identifier: instanceof.alwaysTrue
