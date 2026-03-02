@@ -27,10 +27,6 @@ abstract class AbstractCompanyBusinessUnitAddressCollectionResourceRelationshipE
      */
     protected $companyBusinessUnitAddressMapper;
 
-    /**
-     * @param \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\RestResponseBuilder\CompanyBusinessUnitAddressRestResponseBuilderInterface $companyBusinessUnitAddressRestResponseBuilder
-     * @param \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\Mapper\CompanyBusinessUnitAddressMapperInterface $companyBusinessUnitAddressMapper
-     */
     public function __construct(
         CompanyBusinessUnitAddressRestResponseBuilderInterface $companyBusinessUnitAddressRestResponseBuilder,
         CompanyBusinessUnitAddressMapperInterface $companyBusinessUnitAddressMapper
@@ -64,18 +60,8 @@ abstract class AbstractCompanyBusinessUnitAddressCollectionResourceRelationshipE
         return $resources;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface $resource
-     *
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressCollectionTransfer|null
-     */
     abstract protected function findAddressCollectionTransferInPayload(RestResourceInterface $resource): ?CompanyUnitAddressCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressTransfer $companyUnitAddressTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface
-     */
     protected function createCompanyBusinessUnitAddressResource(
         CompanyUnitAddressTransfer $companyUnitAddressTransfer
     ): RestResourceInterface {

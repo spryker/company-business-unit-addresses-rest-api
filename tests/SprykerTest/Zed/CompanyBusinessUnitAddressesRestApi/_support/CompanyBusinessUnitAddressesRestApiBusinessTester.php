@@ -109,9 +109,6 @@ class CompanyBusinessUnitAddressesRestApiBusinessTester extends Actor
         return $companyBusinessUnitAddressesRestApiFacadeMock;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressCollectionTransfer
-     */
     public function createCompanyUnitAddressCollectionTransfer(): CompanyUnitAddressCollectionTransfer
     {
         return (new CompanyUnitAddressCollectionBuilder())
@@ -120,9 +117,6 @@ class CompanyBusinessUnitAddressesRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressResponseTransfer
-     */
     public function createCompanyUnitAddressResponseTransfer(): CompanyUnitAddressResponseTransfer
     {
         return (new CompanyUnitAddressResponseBuilder([CompanyUnitAddressResponseTransfer::IS_SUCCESSFUL => true]))
@@ -136,17 +130,11 @@ class CompanyBusinessUnitAddressesRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\RestCheckoutDataTransfer
-     */
     public function createRestCheckoutDataTransfer(): RestCheckoutDataTransfer
     {
         return (new RestCheckoutDataBuilder())->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer
-     */
     public function createRestCheckoutRequestAttributesTransfer(): RestCheckoutRequestAttributesTransfer
     {
         return (new RestCheckoutRequestAttributesBuilder())
@@ -156,9 +144,6 @@ class CompanyBusinessUnitAddressesRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function createQuoteTransfer(): QuoteTransfer
     {
         $customerTransfer = (new CustomerBuilder([

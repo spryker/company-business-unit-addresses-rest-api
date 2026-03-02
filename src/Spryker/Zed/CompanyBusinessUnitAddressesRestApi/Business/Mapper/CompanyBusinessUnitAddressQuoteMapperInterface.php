@@ -12,12 +12,6 @@ use Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer;
 
 interface CompanyBusinessUnitAddressQuoteMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function mapCompanyBusinessUnitAddressesToQuote(
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer,
         QuoteTransfer $quoteTransfer

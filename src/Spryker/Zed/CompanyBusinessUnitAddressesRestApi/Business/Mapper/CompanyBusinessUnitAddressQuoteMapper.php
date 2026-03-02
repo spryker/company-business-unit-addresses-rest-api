@@ -19,20 +19,11 @@ class CompanyBusinessUnitAddressQuoteMapper implements CompanyBusinessUnitAddres
      */
     protected $companyBusinessUnitAddressReader;
 
-    /**
-     * @param \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Business\Reader\CompanyBusinessUnitAddressReaderInterface $companyBusinessUnitAddressReader
-     */
     public function __construct(CompanyBusinessUnitAddressReaderInterface $companyBusinessUnitAddressReader)
     {
         $this->companyBusinessUnitAddressReader = $companyBusinessUnitAddressReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function mapCompanyBusinessUnitAddressesToQuote(
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer,
         QuoteTransfer $quoteTransfer
@@ -43,12 +34,6 @@ class CompanyBusinessUnitAddressQuoteMapper implements CompanyBusinessUnitAddres
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function expandQuoteWithBillingAddress(
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer,
         QuoteTransfer $quoteTransfer
@@ -66,12 +51,6 @@ class CompanyBusinessUnitAddressQuoteMapper implements CompanyBusinessUnitAddres
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function expandQuoteWithShippingAddress(
         RestCheckoutRequestAttributesTransfer $restCheckoutRequestAttributesTransfer,
         QuoteTransfer $quoteTransfer
@@ -94,12 +73,6 @@ class CompanyBusinessUnitAddressQuoteMapper implements CompanyBusinessUnitAddres
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\AddressTransfer $addressTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function setItemLevelShippingAddresses(
         QuoteTransfer $quoteTransfer,
         AddressTransfer $addressTransfer

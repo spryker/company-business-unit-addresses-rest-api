@@ -57,9 +57,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testExpandCheckoutDataWithCompanyBusinessUnitAddressesWillUseExistingBusinessUnitAddress(): void
     {
         // Arrange
@@ -88,9 +85,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapCompanyBusinessUnitAddressesToQuoteWillMapExistingBusinessUnitAddress(): void
     {
         // Arrange
@@ -116,9 +110,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCompanyBusinessUnitAddressesInCheckoutDataWillNotReturnErrorIfNoShippingAddressProvided(): void
     {
         // Arrange
@@ -132,9 +123,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
         $this->assertTrue($checkoutResponseTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCompanyBusinessUnitAddressesInCheckoutDataWillNotReturnErrorIfCorrectShippingAddressProvided(): void
     {
         // Arrange
@@ -164,9 +152,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
         $this->assertTrue($checkoutResponseTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCompanyBusinessUnitAddressesInCheckoutDataWillReturnErrorIfNoCompanyUserProvided(): void
     {
         // Arrange
@@ -194,9 +179,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testValidateCompanyBusinessUnitAddressesInCheckoutDataWillReturnErrorIfNoCorrectShippingAddressProvided(): void
     {
         // Arrange
@@ -231,12 +213,6 @@ class CompanyBusinessUnitAddressesRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AddressTransfer $addressTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     protected function assertCompanyBusinessUnitAddress(AddressTransfer $addressTransfer, QuoteTransfer $quoteTransfer): void
     {
         $this->assertIsInt(

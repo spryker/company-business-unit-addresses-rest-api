@@ -21,11 +21,6 @@ class CompanyBusinessUnitAddressesRestApiDependencyProvider extends AbstractBund
      */
     public const CLIENT_COMPANY_UNIT_ADDRESS = 'CLIENT_COMPANY_UNIT_ADDRESS';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -34,11 +29,6 @@ class CompanyBusinessUnitAddressesRestApiDependencyProvider extends AbstractBund
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addCompanyUnitAddressClient(Container $container): Container
     {
         $container->set(static::CLIENT_COMPANY_UNIT_ADDRESS, function (Container $container) {

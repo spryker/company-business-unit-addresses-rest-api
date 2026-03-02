@@ -13,12 +13,6 @@ use Generated\Shared\Transfer\RestAddressTransfer;
 
 interface CompanyBusinessUnitAddressReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\RestAddressTransfer $restAddressTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\AddressTransfer
-     */
     public function getCompanyBusinessUnitAddress(
         RestAddressTransfer $restAddressTransfer,
         QuoteTransfer $quoteTransfer

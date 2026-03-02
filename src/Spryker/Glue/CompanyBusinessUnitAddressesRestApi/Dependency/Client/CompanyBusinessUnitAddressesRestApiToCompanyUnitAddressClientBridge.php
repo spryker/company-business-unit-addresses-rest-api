@@ -27,22 +27,12 @@ class CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressClientBridge implem
         $this->companyBusinessUnitAddressClient = $companyBusinessUnitAddressClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressCriteriaFilterTransfer $criteriaFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressCollectionTransfer
-     */
     public function getCompanyUnitAddressCollection(
         CompanyUnitAddressCriteriaFilterTransfer $criteriaFilterTransfer
     ): CompanyUnitAddressCollectionTransfer {
         return $this->companyBusinessUnitAddressClient->getCompanyUnitAddressCollection($criteriaFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressTransfer $companyUnitAddressTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressResponseTransfer
-     */
     public function findCompanyBusinessUnitAddressByUuid(CompanyUnitAddressTransfer $companyUnitAddressTransfer): CompanyUnitAddressResponseTransfer
     {
         return $this->companyBusinessUnitAddressClient->findCompanyBusinessUnitAddressByUuid($companyUnitAddressTransfer);

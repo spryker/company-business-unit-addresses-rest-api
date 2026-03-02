@@ -21,20 +21,11 @@ class CompanyBusinessUnitAddressReader implements CompanyBusinessUnitAddressRead
      */
     protected $companyUnitAddressFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Dependency\Facade\CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
-     */
     public function __construct(CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade)
     {
         $this->companyUnitAddressFacade = $companyUnitAddressFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestAddressTransfer $restAddressTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\AddressTransfer
-     */
     public function getCompanyBusinessUnitAddress(
         RestAddressTransfer $restAddressTransfer,
         QuoteTransfer $quoteTransfer
@@ -59,12 +50,6 @@ class CompanyBusinessUnitAddressReader implements CompanyBusinessUnitAddressRead
             ->setCompanyBusinessUnitAddressUuid($companyUnitAddressResponseTransfer->getCompanyUnitAddressTransfer()->getUuid());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressResponseTransfer $companyUnitAddressResponseTransfer
-     *
-     * @return bool
-     */
     protected function isCompanyBusinessUnitAddressApplicable(
         QuoteTransfer $quoteTransfer,
         CompanyUnitAddressResponseTransfer $companyUnitAddressResponseTransfer
@@ -82,12 +67,6 @@ class CompanyBusinessUnitAddressReader implements CompanyBusinessUnitAddressRead
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressTransfer $companyUnitAddressTransfer
-     *
-     * @return bool
-     */
     protected function isCurrentCompanyUserInCompany(
         QuoteTransfer $quoteTransfer,
         CompanyUnitAddressTransfer $companyUnitAddressTransfer

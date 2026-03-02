@@ -36,9 +36,6 @@ class CompanyBusinessUnitUuidRestAddressResponseMapperPluginTest extends Unit
      */
     protected CompanyBusinessUnitAddressesRestApiPluginTester $tester;
 
-    /**
-     * @return void
-     */
     public function testShouldCopyCompanyBusinessUnitAddressUuidToRestAddressTransfer(): void
     {
         // Arrange
@@ -55,9 +52,6 @@ class CompanyBusinessUnitUuidRestAddressResponseMapperPluginTest extends Unit
         $this->assertSame(static::FAKE_UUID, $restAddressTransfer->getIdCompanyBusinessUnitAddress());
     }
 
-    /**
-     * @return void
-     */
     public function testDoNothingWhenCompanyBusinessUnitAddressUuidIsNull(): void
     {
         // Arrange

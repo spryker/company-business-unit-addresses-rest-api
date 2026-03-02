@@ -14,12 +14,6 @@ use Generated\Shared\Transfer\RestCompanyBusinessUnitAttributesTransfer;
 
 class CompanyBusinessUnitAddressMapper implements CompanyBusinessUnitAddressMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressTransfer $companyUnitAddressTransfer
-     * @param \Generated\Shared\Transfer\RestCompanyBusinessUnitAddressesAttributesTransfer $restCompanyBusinessUnitAddressesAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestCompanyBusinessUnitAddressesAttributesTransfer
-     */
     public function mapCompanyUnitAddressTransferToRestCompanyBusinessUnitAddressesAttributesTransfer(
         CompanyUnitAddressTransfer $companyUnitAddressTransfer,
         RestCompanyBusinessUnitAddressesAttributesTransfer $restCompanyBusinessUnitAddressesAttributesTransfer
@@ -27,12 +21,6 @@ class CompanyBusinessUnitAddressMapper implements CompanyBusinessUnitAddressMapp
         return $restCompanyBusinessUnitAddressesAttributesTransfer->fromArray($companyUnitAddressTransfer->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     * @param \Generated\Shared\Transfer\RestCompanyBusinessUnitAttributesTransfer $restCompanyBusinessUnitAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestCompanyBusinessUnitAttributesTransfer
-     */
     public function mapDefaultBillingAddressIdFromCompanyBusinessUnitTransferToRestCompanyBusinessUnitAttributesTransfer(
         CompanyBusinessUnitTransfer $companyBusinessUnitTransfer,
         RestCompanyBusinessUnitAttributesTransfer $restCompanyBusinessUnitAttributesTransfer
@@ -57,11 +45,6 @@ class CompanyBusinessUnitAddressMapper implements CompanyBusinessUnitAddressMapp
         return $restCompanyBusinessUnitAttributesTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyBusinessUnitTransfer $companyBusinessUnitTransfer
-     *
-     * @return bool
-     */
     protected function hasAddressCollection(CompanyBusinessUnitTransfer $companyBusinessUnitTransfer): bool
     {
         return $companyBusinessUnitTransfer->getAddressCollection()

@@ -52,9 +52,6 @@ class GetCompanyBusinessUnitAddressTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testGetCompanyBusinessUnitAddressInCaseAddressWasFound(): void
     {
         // Arrange
@@ -85,9 +82,6 @@ class GetCompanyBusinessUnitAddressTest extends Unit
         $this->assertCompanyBusinessUnitAddress($companyUnitAddressResponseTransfer, $quoteTransfer, $addressTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetCompanyBusinessUnitAddressInCaseCompanyBusinessUnitAddressFromAnotherCompany(): void
     {
         // Arrange
@@ -115,9 +109,6 @@ class GetCompanyBusinessUnitAddressTest extends Unit
         $this->assertSame($restAddressTransfer->getAddress1(), $addressTransfer->getAddress1());
     }
 
-    /**
-     * @return void
-     */
     public function testGetCompanyBusinessUnitAddressInCaseRegularCustomerWithoutCompanyRelation(): void
     {
         // Arrange
@@ -143,9 +134,6 @@ class GetCompanyBusinessUnitAddressTest extends Unit
         $this->assertSame($restAddressTransfer->getAddress1(), $addressTransfer->getAddress1());
     }
 
-    /**
-     * @return void
-     */
     public function testGetCompanyBusinessUnitAddressInCaseWhenCompanyUnitAddressWasNotFound(): void
     {
         // Arrange
@@ -171,13 +159,6 @@ class GetCompanyBusinessUnitAddressTest extends Unit
         $this->assertSame($restAddressTransfer->getAddress1(), $addressTransfer->getAddress1());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUnitAddressResponseTransfer $companyUnitAddressResponseTransfer
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\AddressTransfer $addressTransfer
-     *
-     * @return void
-     */
     protected function assertCompanyBusinessUnitAddress(
         CompanyUnitAddressResponseTransfer $companyUnitAddressResponseTransfer,
         QuoteTransfer $quoteTransfer,
@@ -195,9 +176,6 @@ class GetCompanyBusinessUnitAddressTest extends Unit
         $this->assertSame($companyUnitAddressResponseTransfer->getCompanyUnitAddressTransfer()->getUuid(), $addressTransfer->getCompanyBusinessUnitAddressUuid());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressResponseTransfer
-     */
     protected function getFakeCompanyUnitAddressResponseTransfer(): CompanyUnitAddressResponseTransfer
     {
         $companyUnitAddressBuilder = (new CompanyUnitAddressBuilder())->withCompany()->build();

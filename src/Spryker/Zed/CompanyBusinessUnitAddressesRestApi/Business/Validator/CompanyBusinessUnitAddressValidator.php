@@ -35,19 +35,11 @@ class CompanyBusinessUnitAddressValidator implements CompanyBusinessUnitAddressV
      */
     protected $companyUnitAddressFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Dependency\Facade\CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade
-     */
     public function __construct(CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressFacadeInterface $companyUnitAddressFacade)
     {
         $this->companyUnitAddressFacade = $companyUnitAddressFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     public function validateCompanyBusinessUnitAddressesInCheckoutData(
         CheckoutDataTransfer $checkoutDataTransfer
     ): CheckoutResponseTransfer {
@@ -80,11 +72,6 @@ class CompanyBusinessUnitAddressValidator implements CompanyBusinessUnitAddressV
         return $checkoutResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return bool
-     */
     protected function isCompanyUserAccount(CheckoutDataTransfer $checkoutDataTransfer): bool
     {
         return $checkoutDataTransfer->getQuote()

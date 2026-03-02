@@ -21,9 +21,6 @@ use Spryker\Glue\Kernel\AbstractFactory;
 
 class CompanyBusinessUnitAddressesRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\Relationship\CompanyBusinessUnitAddressCollectionResourceRelationshipExpanderInterface
-     */
     public function createCompanyBusinessUnitAddressCollectionByCompanyBusinessUnitTransferResourceRelationshipExpander(): CompanyBusinessUnitAddressCollectionResourceRelationshipExpanderInterface
     {
         return new CompanyBusinessUnitAddressCollectionByCompanyBusinessUnitTransferResourceRelationshipExpander(
@@ -32,9 +29,6 @@ class CompanyBusinessUnitAddressesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\Relationship\CompanyBusinessUnitAddressCollectionResourceRelationshipExpanderInterface
-     */
     public function createCompanyBusinessUnitAddressCollectionByCheckoutDataResourceRelationshipExpander(): CompanyBusinessUnitAddressCollectionResourceRelationshipExpanderInterface
     {
         return new CompanyBusinessUnitAddressCollectionByCheckoutDataResourceRelationshipExpander(
@@ -43,9 +37,6 @@ class CompanyBusinessUnitAddressesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\Reader\CompanyBusinessUnitAddressReaderInterface
-     */
     public function createCompanyBusinessUnitAddressReader(): CompanyBusinessUnitAddressReaderInterface
     {
         return new CompanyBusinessUnitAddressReader(
@@ -55,25 +46,16 @@ class CompanyBusinessUnitAddressesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\Mapper\CompanyBusinessUnitAddressMapperInterface
-     */
     public function createCompanyBusinessUnitAddressMapper(): CompanyBusinessUnitAddressMapperInterface
     {
         return new CompanyBusinessUnitAddressMapper();
     }
 
-    /**
-     * @return \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Processor\CompanyBusinessUnitAddress\RestResponseBuilder\CompanyBusinessUnitAddressRestResponseBuilderInterface
-     */
     public function createCompanyBusinessUnitAddressRestResponseBuilder(): CompanyBusinessUnitAddressRestResponseBuilderInterface
     {
         return new CompanyBusinessUnitAddressRestResponseBuilder($this->getResourceBuilder());
     }
 
-    /**
-     * @return \Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Dependency\Client\CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressClientInterface
-     */
     public function getCompanyBusinessUnitAddressClient(): CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressClientInterface
     {
         return $this->getProvidedDependency(CompanyBusinessUnitAddressesRestApiDependencyProvider::CLIENT_COMPANY_UNIT_ADDRESS);

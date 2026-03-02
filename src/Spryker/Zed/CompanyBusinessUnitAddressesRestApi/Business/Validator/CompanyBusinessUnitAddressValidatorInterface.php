@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\CheckoutResponseTransfer;
 
 interface CompanyBusinessUnitAddressValidatorInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CheckoutDataTransfer $checkoutDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\CheckoutResponseTransfer
-     */
     public function validateCompanyBusinessUnitAddressesInCheckoutData(
         CheckoutDataTransfer $checkoutDataTransfer
     ): CheckoutResponseTransfer;

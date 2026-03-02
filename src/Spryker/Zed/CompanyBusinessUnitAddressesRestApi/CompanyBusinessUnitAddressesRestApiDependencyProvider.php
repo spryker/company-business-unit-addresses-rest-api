@@ -21,11 +21,6 @@ class CompanyBusinessUnitAddressesRestApiDependencyProvider extends AbstractBund
      */
     public const FACADE_COMPANY_UNIT_ADDRESS = 'FACADE_COMPANY_UNIT_ADDRESS';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -34,11 +29,6 @@ class CompanyBusinessUnitAddressesRestApiDependencyProvider extends AbstractBund
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanyUnitAddressFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_UNIT_ADDRESS, function (Container $container) {

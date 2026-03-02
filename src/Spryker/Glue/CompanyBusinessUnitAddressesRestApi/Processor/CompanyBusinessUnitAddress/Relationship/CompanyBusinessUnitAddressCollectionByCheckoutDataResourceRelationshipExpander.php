@@ -13,11 +13,6 @@ use Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface;
 
 class CompanyBusinessUnitAddressCollectionByCheckoutDataResourceRelationshipExpander extends AbstractCompanyBusinessUnitAddressCollectionResourceRelationshipExpander
 {
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface $resource
-     *
-     * @return \Generated\Shared\Transfer\CompanyUnitAddressCollectionTransfer|null
-     */
     protected function findAddressCollectionTransferInPayload(RestResourceInterface $resource): ?CompanyUnitAddressCollectionTransfer
     {
         /**
@@ -36,11 +31,6 @@ class CompanyBusinessUnitAddressCollectionByCheckoutDataResourceRelationshipExpa
         return $payload->getCompanyBusinessUnitAddresses();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestCheckoutDataTransfer $restCheckoutDataTransfer
-     *
-     * @return bool
-     */
     protected function hasCompanyUnitAddressCollection(RestCheckoutDataTransfer $restCheckoutDataTransfer): bool
     {
         return $restCheckoutDataTransfer->getCompanyBusinessUnitAddresses()

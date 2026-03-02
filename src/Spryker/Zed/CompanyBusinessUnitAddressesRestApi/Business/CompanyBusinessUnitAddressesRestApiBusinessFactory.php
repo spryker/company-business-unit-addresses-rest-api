@@ -24,33 +24,21 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class CompanyBusinessUnitAddressesRestApiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Business\Expander\CheckoutDataExpanderInterface
-     */
     public function createCheckoutDataExpander(): CheckoutDataExpanderInterface
     {
         return new CheckoutDataExpander($this->getCompanyUnitAddressFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Business\Mapper\CompanyBusinessUnitAddressQuoteMapperInterface
-     */
     public function createCompanyBusinessUnitAddressQuoteMapper(): CompanyBusinessUnitAddressQuoteMapperInterface
     {
         return new CompanyBusinessUnitAddressQuoteMapper($this->createCompanyBusinessUnitAddressReader());
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Business\Reader\CompanyBusinessUnitAddressReaderInterface
-     */
     public function createCompanyBusinessUnitAddressReader(): CompanyBusinessUnitAddressReaderInterface
     {
         return new CompanyBusinessUnitAddressReader($this->getCompanyUnitAddressFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Business\Validator\CompanyBusinessUnitAddressValidatorInterface
-     */
     public function createCompanyBusinessUnitAddressValidator(): CompanyBusinessUnitAddressValidatorInterface
     {
         return new CompanyBusinessUnitAddressValidator(
@@ -58,9 +46,6 @@ class CompanyBusinessUnitAddressesRestApiBusinessFactory extends AbstractBusines
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanyBusinessUnitAddressesRestApi\Dependency\Facade\CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressFacadeInterface
-     */
     public function getCompanyUnitAddressFacade(): CompanyBusinessUnitAddressesRestApiToCompanyUnitAddressFacadeInterface
     {
         return $this->getProvidedDependency(CompanyBusinessUnitAddressesRestApiDependencyProvider::FACADE_COMPANY_UNIT_ADDRESS);
