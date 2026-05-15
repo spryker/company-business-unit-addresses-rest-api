@@ -17,11 +17,13 @@
         "spryker/uuid-behavior": "^1.0.0"
     },
     "require-dev": {
+        "spryker/api-platform": "*",
         "spryker/code-sniffer": "*",
         "spryker/container": "*",
         "spryker/testify": "*"
     },
     "suggest": {
+        "spryker/api-platform": "If you want to expose CompanyBusinessUnitAddressesRestApi resources through the API Platform stack.",
         "spryker/auth-rest-api": "If you want to authorize and authenticate customers via access tokens."
     },
     "autoload": {

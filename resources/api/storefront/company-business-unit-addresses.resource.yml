@@ -1,0 +1,108 @@
+resource:
+    name: CompanyBusinessUnitAddresses
+    shortName: company-business-unit-addresses
+    description: 'Company business unit address management for authenticated company users'
+
+    provider: Spryker\Glue\CompanyBusinessUnitAddressesRestApi\Api\Storefront\Provider\CompanyBusinessUnitAddressesStorefrontProvider
+
+    paginationEnabled: false
+
+    security: "is_granted('ROLE_CUSTOMER') or is_granted('ROLE_COMPANY_USER')"
+
+    operations:
+        - type: Get
+          name: getCompanyBusinessUnitAddressByUuid
+          uriTemplate: '/company-business-unit-addresses/{uuid}'
+          description: "Retrieve a specific company business unit address by UUID. The address must belong to the authenticated company user's company."
+
+        # BC: legacy `GET /company-business-unit-addresses` (no id) returned 501 Not Implemented.
+        - type: GetCollection
+          name: getCompanyBusinessUnitAddressesFallback
+          uriTemplate: '/company-business-unit-addresses'
+          description: 'Returns 501 (endpoint not implemented).'
+
+    properties:
+        # BC: `uuid` is the JSON:API resource id (`data.id`), not an attribute.
+        # `identifier: true` populates `data.id`; `readable: false` keeps it out of
+        # the `attributes` block, matching the legacy response shape.
+        uuid:
+            type: string
+            identifier: true
+            writable: false
+            readable: false
+            required: false
+            description: 'Unique identifier of the company business unit address'
+            openapiContext:
+                example: 'e5ba84d7-5ebb-5da0-97f4-9e89e3f47d5d'
+
+        address1:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'First line of the street address'
+            openapiContext:
+                example: 'Caroline-Michaelis-Str.'
+
+        address2:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Second line of the street address'
+            openapiContext:
+                example: '8'
+
+        address3:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Third line of the street address'
+            openapiContext:
+                example: 'Floor 3'
+
+        zipCode:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Postal code'
+            openapiContext:
+                example: '10115'
+
+        city:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'City name'
+            openapiContext:
+                example: 'Berlin'
+
+        phone:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Phone number'
+            openapiContext:
+                example: '+49 30 234567890'
+
+        iso2Code:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Two-letter ISO country code'
+            openapiContext:
+                example: 'DE'
+
+        comment:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Comment or note for the address'
+            openapiContext:
+                example: 'Main office address'
