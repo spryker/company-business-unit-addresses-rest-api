@@ -14,17 +14,33 @@ resource:
           name: getCompanyBusinessUnitAddressByUuid
           uriTemplate: '/company-business-unit-addresses/{uuid}'
           description: "Retrieve a specific company business unit address by UUID. The address must belong to the authenticated company user's company."
+          openapiContext:
+              responses:
+                  200:
+                      description: 'Company business unit address returned.'
+                  401:
+                      description: 'Invalid access token.'
+                  403:
+                      description: 'Access denied: missing access token or insufficient scope.'
+                  404:
+                      description: "Address not found, or it does not belong to the authenticated company user's company (code 2001)."
 
         # BC: legacy `GET /company-business-unit-addresses` (no id) returned 501 Not Implemented.
         - type: GetCollection
           name: getCompanyBusinessUnitAddressesFallback
           uriTemplate: '/company-business-unit-addresses'
           description: 'Returns 501 (endpoint not implemented).'
+          # No success response: the endpoint exists only to keep the legacy 501 contract.
+          openapiContext:
+              responses:
+                  401:
+                      description: 'Invalid access token.'
+                  403:
+                      description: 'Access denied: missing access token or insufficient scope.'
+                  501:
+                      description: 'Resource is not implemented.'
 
     properties:
-        # BC: `uuid` is the JSON:API resource id (`data.id`), not an attribute.
-        # `identifier: true` populates `data.id`; `readable: false` keeps it out of
-        # the `attributes` block, matching the legacy response shape.
         uuid:
             type: string
             identifier: true
