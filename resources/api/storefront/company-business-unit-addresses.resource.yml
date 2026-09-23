@@ -11,6 +11,9 @@ resource:
 
     operations:
         - type: Get
+          extraProperties:
+              notFoundCode: '2001'
+              notFoundMessage: 'Company business unit address not found.'
           name: getCompanyBusinessUnitAddressByUuid
           uriTemplate: '/company-business-unit-addresses/{uuid}'
           description: "Retrieve a specific company business unit address by UUID. The address must belong to the authenticated company user's company."
