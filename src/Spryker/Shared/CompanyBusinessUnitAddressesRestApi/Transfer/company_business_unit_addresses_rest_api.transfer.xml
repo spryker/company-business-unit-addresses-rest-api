@@ -15,6 +15,7 @@
     <transfer name="CompanyBusinessUnit">
         <property name="addressCollection" type="CompanyUnitAddressCollection" description="A collection of addresses."/>
         <property name="defaultBillingAddress" type="int" description="The identifier for the default billing address."/>
+        <property name="idCompanyBusinessUnit" type="int"/>
     </transfer>
 
     <transfer name="CompanyUnitAddressCollection">
@@ -35,6 +36,7 @@
         <property name="comment" type="string" description="A user-submitted comment or note."/>
         <property name="iso2Code" type="string" description="The two-letter ISO code for a country."/>
         <property name="isDefaultBilling" type="bool" description="A flag indicating if an address is the default for billing."/>
+        <property name="companyBusinessUnits" type="CompanyBusinessUnitCollection"/>
     </transfer>
 
     <transfer name="CompanyUnitAddressResponse">
@@ -59,6 +61,7 @@
     <transfer name="CompanyUnitAddressCriteriaFilter">
         <property name="idCompanyBusinessUnit" type="int"/>
         <property name="idCompany" type="int"/>
+        <property name="companyBusinessUnitIds" type="int[]" singular="idCompanyBusinessUnit" strict="true"/>
     </transfer>
 
     <transfer name="RestCheckoutData">
@@ -150,6 +153,10 @@
 
     <transfer name="RestShipments">
         <property name="shippingAddress" type="RestAddress" restRequestParameter="yes" description="The address where an order should be shipped."/>
+    </transfer>
+
+    <transfer name="CompanyBusinessUnitCollection">
+        <property name="companyBusinessUnits" type="CompanyBusinessUnit[]" singular="companyBusinessUnit"/>
     </transfer>
 
 </transfers>
